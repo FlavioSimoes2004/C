@@ -4,5 +4,6 @@ int main(){
     int x = 10;
     int* ptr = &x;
 
-    printf("%p", ptr);
+    *ptr = 960;
+    printf("x = %i, ptr = %i", x, *ptr);
 }
