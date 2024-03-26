@@ -1,8 +1,62 @@
 # C
+## ARRAYs
+#### CRIANDO
+int seila[4]; <strong>ou</strong> int seila[] = {1, 2, 3, 4}; <strong>ou</strong> int age[4] = {7, 27, 34, 63};
+
+#### TAMANHO
+Iremos usar o 'sizeof(dataType)', que retorna um int.\
+Se fizermos:\
+\
+int arr = {1, 2, 3};\
+int length = sizeof(arr);\
+\
+Não irá printar o tamanho correto da array, pois ele retorna o tamanho do endereço daquele tipo vezes a quantidade de elementos armazenado na array.\
+Para pegarmos o tamanho certinho, fazemos assim:\
+\
+int arr = {1, 2, 3};\
+int length = sizeof(arr)/sizeof(int);\
+\
+Agora sim a variável length armazena o tamanho certo do array.
+
+## MATRIZ
+#### CRIANDO
+int mat[][2] = {{1, 2}, {3, 4}, {5, 6}};
+
+#### TAMANHO
+Para descobrir o tamanho de uma matriz, fazemos quase a mesma coisa quando é pra descobrir o tamanho do array.\
+\
+int test[][2] = {{1, 2}, {3, 4}, {5, 6}};
+printf("%i\n", sizeof(test)/sizeof(test[0]));
+printf("%i", sizeof(test[0])/sizeof(int));
+
 ## STRING
 Uma array de char.\
 Exemplo:\
 char str[] = "String";\
+
+## STRUCT
+Como se fosse uma classe em java
+
+#### CRIANDO
+struct Person{\
+  char name[20];\
+  int age;\
+};\
+\
+int main(){\
+  struct Person pessoa1 = {"seila", 10};\
+  struct Person pessoa2 = {.age = 10, "seila"};\
+}
+
+#### OU
+typedef struct{\
+  char name[20];\
+  int age;\
+} Person;\
+\
+int main(){\
+  Person pessoa = {"seila", 9};\
+}
 
 #### PRINT STRING
 printf("%s", str);
