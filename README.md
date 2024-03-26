@@ -30,9 +30,27 @@ printf("%i\n", sizeof(test)/sizeof(test[0]));
 printf("%i", sizeof(test[0])/sizeof(int));
 
 ## STRING
-Uma array de char.\
-Exemplo:\
-char str[] = "String";\
+Uma array de char.
+#### CRIANDO
+char str[] = "String"; <strong>ou</strong> char str[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '\0'};
+
+#### PRINTANDO STRING
+printf("%s", string);
+
+#### TAMANHO
+strlen(String)\
+Isso retorna o tamanho da string.
+
+#### CONCATENATING STRINGs
+strcat(dst, src)\
+Pega a string 'src' e insere ela no final da string 'dst'.
+- dst = destino
+- src = source
+
+#### COPYING STRINGs
+strcpy(dst, src)\
+Dado uma string não vazia 'str' e uma string vazia (uma array de caracteres vazios) 'dst', essa função copia o conteúdo de 'src' para o de 'dst'.\
+É importante que o tamanho dessa string vazia(dst) tenha um tamanho igual ou maior que o tamanho de 'src' + 1, por causa o caractere nulo('\0').
 
 ## STRUCT
 Como se fosse uma classe em java
@@ -46,6 +64,8 @@ struct Person{\
 int main(){\
   struct Person pessoa1 = {"seila", 10};\
   struct Person pessoa2 = {.age = 10, "seila"};\
+  struct Person pessoa3 = {"seila"};
+  pessoa3.age = 10;
 }
 
 #### OU
@@ -58,11 +78,12 @@ int main(){\
   Person pessoa = {"seila", 9};\
 }
 
-#### PRINT STRING
-printf("%s", str);
+#### STRUCT POINTERS
+Para acessar variáveis de um struct que é um pointer, podemos fazer o seguinte:\
+(*pessoa).age; <em>ou</em> *pessoa->age
 
-#### PEGAR TAMANHO DE UMA STRING
-strlen(str);
+#### STRUCT E FUNCTIONS
+Structs podem ser parâmetros para funções.
 
 ## POINTER
 Em C, um byte de memória pode ser acessado usando pointer. Um pointer contendo o endereço de uma variável está apontando para aquela variável.
