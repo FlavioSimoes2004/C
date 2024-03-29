@@ -1,4 +1,15 @@
 # C
+## INPUT
+usar o scanf\
+\
+Exemplo:\
+int main(){\
+  int x;\
+  scanf(" %i", &x);\
+}\
+\
+Dar o espaço porque se for usado muito o scanf, ele pode ler um input indesejado.
+
 ## ARRAYs
 #### CRIANDO
 int seila[4]; <strong>ou</strong> int seila[] = {1, 2, 3, 4}; <strong>ou</strong> int age[4] = {7, 27, 34, 63};
@@ -137,3 +148,37 @@ fazendo:
 - ptr++;<br>
 
 Agora o array está com o endereço do elemento no index 1 da array, fazendo novamente, ele estaria armazenando o endereço do elemento no index 2 da array.
+
+# C++
+## PRINT
+tem que incluir iostream\
+Exemplo:\
+#include <iostream>\
+\
+int main() {\
+  std::cout << "Hello World!\n";\
+}\
+\
+Exemplo 2:\
+#include <iostream>\
+\
+using namespace std;\
+\
+int main() {\
+  cout << "Hello World!\n";\
+}
+
+#### PRINTAR VARIÁVEIS
+cout << "Var = " << var;
+
+## INPUT
+Exemplo:
+#include <iostream>\
+\
+using namespace std;\
+\
+int main() {\
+  int num;
+  cout << "Enter a number: ";\
+  cin >> num;
+}
