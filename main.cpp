@@ -3,8 +3,6 @@
 using namespace std;
 
 int main(){
-    int var;
-    cout << "Enter a number: ";
-    cin >> var;
-    cout << "Number is " << var;
+    string a = "ola";
+    cout << a[0];
 }

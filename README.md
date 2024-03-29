@@ -178,7 +178,41 @@ Exemplo:
 using namespace std;\
 \
 int main() {\
-  int num;
+  int num;\
   cout << "Enter a number: ";\
-  cin >> num;
+  cin >> num;\
 }
+
+## VECTORS
+tem que ter a biblioteca < vector>
+
+#### CRIANDO VECTOR
+std::vector< type> name;\
+\
+Exemplo:\
+std::vector< int> calories_today;
+
+#### INICIALIZANDO
+std::vector< double> location = {42.651443, -73.749302};\
+ou\
+std::vector< double> location(2);
+
+#### INDEX
+vector[index];
+
+#### ADICIONANDO E REMOVENDO ELEMENTOS
+Para adicionar um elemento no final do vetor, podemos usar o .push_back(elemento).\
+vector.push_back(10);\
+\
+Para remover um elemento que está no final do vetor, podemos usar o pop_back().\
+vector.pop_back();
+
+#### TAMANHO
+Usar o .size().
+
+#### USANDO COMO RETORNO DE FUNÇÃO
+std::vector< int> function(){\
+}
+
+## BUILT-IN FUNCTIONS
+Bibliotecas como < cmath>
