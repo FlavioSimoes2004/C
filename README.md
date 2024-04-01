@@ -271,3 +271,146 @@ bool is_palindrome(std::string text) {\
 \
 Para podemos pegar o arquivo .HPP usaremos:\
 #include "arquivo.hpp"
+
+#### FUNCTIONS INLINE
+Ficam no arquivo .hpp\
+Exemplo:\
+std::string goodnight1(std::string thing1);\
+\
+inline\
+std::string goodnight1(std::string thing1) {\
+  return "Goodnight, " + thing1 + ".\n";\
+}
+
+O inline vem em cima da definição da função
+
+#### FUNCTION TEMPLATE
+Função genérica\
+Exemplo:
+<pre>
+template < typename T >
+void print_cat_ears(T item) {
+
+  std::cout << " " << item << "   " << item << " " << "\n";
+  std::cout << item << item << item << " " << item << item << item << "\n";
+
+} </pre>
+
+## CLASSE
+Exemplo:
+<pre>
+class Person{
+  string name;
+  int age;
+
+  public:
+
+  private:
+    string cpf;
+};
+</pre>
+
+#### FUNÇÃO NAS CLASSES
+Exemplo 1:
+<pre>
+class Obj{
+  public:
+    void setId(int id){
+      this->id = id;
+    }
+
+    void getId(){
+      return id;
+    }
+
+  private:
+    int id;
+};
+</pre>
+
+Exemplo 2:
+<pre>
+class Obj{
+  public:
+    void setId(int id);
+    void getId();
+
+  private:
+    int id;
+};
+
+Obj::setId(int id){
+  this->id = id;
+}
+
+Obj::getId(){
+  return id;
+}
+</pre>
+
+#### CONTROLE DE ACESSO (PUBLIC E PRIVATE)
+Exemplo:
+<pre>
+class Pessoa{
+    int age;
+
+    public:
+        string name;
+
+    private:
+      string cpf;
+};
+</pre>
+Variável 'age' é privada.\
+Variável 'name' é pública.\
+Variável 'cpf' é privada.
+
+#### CONSTRUCTORS
+Função pública que tem o mesmo nome da classe.\
+Exemplo:
+<pre>
+class Pessoa{
+    int age;
+
+    public:
+        string name;
+        <strong>Pessoa</strong>(string name, int age){
+            this->name = name;
+            this->age = age;
+        }
+};
+
+int main(){
+    Pessoa p("flavio", 19);
+    cout << p.name;
+}
+</pre>
+
+#### DESTRUCTORS
+Destrói objetos, sua declaração é quase igual ao do constructor.\
+Exemplo:
+<pre>
+class Pessoa{
+    int age;
+
+    public:
+        string name;
+        Pessoa(string name, int age){
+            this->name = name;
+            this->age = age;
+        }
+        ~Pessoa(){ //this is a DESTRUCTOR, its the same with constructor, but it starts with '~'
+            cout << "TCHAU\n";
+        }
+};
+
+int main(){
+    Pessoa p("flavio", 19);
+    p.~Pessoa();
+}
+</pre>
+
+## REFERENCES
+<pre>
+
+</pre>
