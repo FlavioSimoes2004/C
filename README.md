@@ -67,27 +67,31 @@ Dado uma string não vazia 'str' e uma string vazia (uma array de caracteres vaz
 Como se fosse uma classe em java
 
 #### CRIANDO
-struct Person{\
-  char name[20];\
-  int age;\
-};\
-\
-int main(){\
-  struct Person pessoa1 = {"seila", 10};\
-  struct Person pessoa2 = {.age = 10, "seila"};\
+<pre>
+struct Person{
+  char name[20];
+  int age;
+};
+
+int main(){
+  struct Person pessoa1 = {"seila", 10};
+  struct Person pessoa2 = {.age = 10, "seila"};
   struct Person pessoa3 = {"seila"};
   pessoa3.age = 10;
 }
+</pre>
 
 #### OU
-typedef struct{\
-  char name[20];\
-  int age;\
-} Person;\
-\
-int main(){\
-  Person pessoa = {"seila", 9};\
+<pre>
+typedef struct{
+  char name[20];
+  int age;
+} Person;
+
+int main(){
+  Person pessoa = {"seila", 9};
 }
+</pre>
 
 #### STRUCT POINTERS
 Para acessar variáveis de um struct que é um pointer, podemos fazer o seguinte:\
@@ -97,9 +101,13 @@ Para acessar variáveis de um struct que é um pointer, podemos fazer o seguinte
 Structs podem ser parâmetros para funções.
 
 ## POINTER
-Em C, um byte de memória pode ser acessado usando pointer. Um pointer contendo o endereço de uma variável está apontando para aquela variável.
-Exemplo:
-int* num ou int *num
+Em C, um byte de memória pode ser acessado usando pointer. Um pointer contendo o endereço de uma variável está apontando para aquela variável.\
+Exemplo:\
+<pre>
+int* number;
+int *number;
+int * number;
+</pre>
 
 #### PRINTANDO POINTER
 int x; // Create an int variable\
@@ -173,15 +181,17 @@ cout << "Var = " << var;
 
 ## INPUT
 Exemplo:
-#include <iostream>\
-\
-using namespace std;\
-\
-int main() {\
-  int num;\
-  cout << "Enter a number: ";\
-  cin >> num;\
+<pre>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int num;
+  cout << "Enter a number: ";
+  cin >> num;
 }
+</pre>
 
 ## VECTORS
 tem que ter a biblioteca < vector>
@@ -240,35 +250,37 @@ void eat() {\
 }
 
 #### HEADER FILES
-Criar um arquivo .hpp que tem as declarações de funções, exemplo:\
-<strong>.HPP</strong>\
-double average(double num1, double num2);\
-int tenth_power(int num);\
-bool is_palindrome(std::string text);\
-\
-<strong>.CPP</strong>\
-double average(double num1, double num2) {\
-  return (num1 + num2) / 2;\
-}\
-\
-int tenth_power(int num) {\
-  return pow(num, 10);\
-}\
-\
-bool is_palindrome(std::string text) {\
-  std::string reversed_text = "";\
-  \
-  for (int i = text.size() - 1; i >= 0; i--) {\
-    reversed_text += text[i];\
-  }\
-  \
-  if (reversed_text == text) {\
-    return true;\
-  }\
-  \
-  return false;\
-}\
-\
+Criar um arquivo .hpp que tem as declarações de funções.\
+Exemplo:\
+<pre>
+<strong>.HPP</strong>
+double average(double num1, double num2);
+int tenth_power(int num);
+bool is_palindrome(std::string text);
+
+<strong>.CPP</strong>
+double average(double num1, double num2) {
+  return (num1 + num2) / 2;
+}
+
+int tenth_power(int num) {
+  return pow(num, 10);
+}
+
+bool is_palindrome(std::string text) {
+  std::string reversed_text = "";
+  
+  for (int i = text.size() - 1; i >= 0; i--) {
+    reversed_text += text[i];
+  }
+  
+  if (reversed_text == text) {
+    return true;
+  }
+  
+  return false;
+}
+</pre>
 Para podemos pegar o arquivo .HPP usaremos:\
 #include "arquivo.hpp"
 
@@ -412,5 +424,30 @@ int main(){
 
 ## REFERENCES
 <pre>
+int seila(int &i){
+  return i*3;
+}
 
+int main(){
+  int x = 0;
+  int &z = x;
+  z++;
+  cout << x << "\n";
+
+  cout << seila(z);
+}
+</pre>
+
+### PASS_BY_REFERENCE WITH CONST
+Usado para dizer que aquela variável não será mudada dentro da função, ou seja, não poderemos dizer qe a variável é igual a x valor.\
+Exemplo:
+<pre>
+int square(int <storng>const</strong> &i) {
+  return i * i;
+}
+
+int main() {
+  int side = 5;
+  std::cout << square(side) << "\n";
+}
 </pre>
